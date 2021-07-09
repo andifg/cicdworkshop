@@ -1,0 +1,13 @@
+apiVersion: velero.io/v1
+kind: Backup
+metadata:
+  creationTimestamp: null
+  name: jira7
+  namespace: velero
+spec:
+  hooks: {}
+  includedNamespaces:
+  - jira7
+  ttl: 720h0m0s
+status: {}
+

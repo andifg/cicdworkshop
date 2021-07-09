@@ -1,0 +1,12 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: jira-backup
+spec:
+  destination:
+    namespace: velero
+    server: https://kubernetes.default.svc
+  project: jira7
+  source:
+    path: jira-backups
+    repoURL: https://github.com/andifg/cicdworkshop.git 
