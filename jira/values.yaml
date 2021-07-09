@@ -1,0 +1,30 @@
+jira:
+  persistence:
+    enabled: true
+    home:
+      storageClass: "hcloud-volumes"
+      size: "10Gi"
+    sharedHome:
+      storageClass: "hcloud-volumes"
+      size: "10Gi"
+    # Volume for Velero restic backup
+    backup:
+      enabled: false
+      storageClass: ""
+      size: "10Gi"
+  database:
+    type: postgresql
+  ingress:
+    enabled: true
+    labels: {}
+    annotations:
+      kubernetes.io/ingress.class: nginx
+      kubernetes.io/tls-acme: "true"
+      cert-manager.io/cluster-issuer: letsencrypt-production
+    path: /
+    host: jira.workshop.andswrld.dev
+    tls:
+      secretName: jira-tls
+  postgresql:
+    enabled: true
+    postgresqlPassword: TTM7T8U4k5EpzxO04u882mJohQgRDNUWYeoYBWWN

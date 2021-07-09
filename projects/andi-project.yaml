@@ -1,0 +1,12 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: jira-andi
+spec:
+  destinations:
+  - namespace: jira7
+    server: https://kubernetes.default.svc
+  - namespace: velero
+    server: https://kubernetes.default.svc
+  sourceRepos:
+  - https://github.com/andifg/cicdworkshop.git
